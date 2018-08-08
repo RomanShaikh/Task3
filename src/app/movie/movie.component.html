@@ -1,0 +1,93 @@
+<div class="container">
+    <div class="jumbotron text-center">
+      <h1>Movie Search</h1> 
+      <p>Just enter your movie name and get all details</p> 
+     
+        <div class="input-group">
+          <input #name type="text" class="form-control" size="50" placeholder="Enter Address" required>
+          <div class="input-group-btn">
+            <button type="button" (click)="this.movie.getMovieData(name.value)" class="btn btn-danger">Submit</button>
+          </div>
+        </div> 
+    </div>
+          <h2 *ngIf="this.movie.movieData.title">Movie data</h2>
+            <!-- <img class="rounded mx-auto d-block" src="{{this.movie.movieData.poster}}"> -->
+            <!-- <div class="card rounded mx-auto d-block" style="width: 18rem;">
+                <img class="card-img-top " src="{{this.movie.movieData.poster}}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{this.movie.movieData.title}}</h5>
+                  <p class="card-text">{{this.movie.movieData.actors}}</p>
+                </div>
+              </div> -->
+
+              <div *ngIf="this.movie.movieData.title" class="row p-3">
+                  <div class="col-md-4">
+                           <label class="text-white">Title</label>
+                           <img class="rounded mx-auto d-block" src="{{this.movie.movieData.poster}}">
+                   </div>
+                   <div class="col-md-8">
+                           <label class="text-white">Movie Details</label>
+                           <dl class="row p-5">
+                              <dt class="col-sm-3">Title</dt>
+                              <dd class="col-sm-9">{{this.movie.movieData.title}}</dd>
+                            
+                              <dt class="col-sm-3">Director</dt>
+                              <dd class="col-sm-9">
+                               <p>{{this.movie.movieData.director}}</p>
+                              </dd>
+                            
+                              <dt class="col-sm-3">reted</dt>
+                              <dd class="col-sm-9">{{this.movie.movieData.reted}}</dd>
+                            
+                              <dt class="col-sm-3 text-truncate">actors</dt>
+                              <dd class="col-sm-9">{{this.movie.movieData.actors}}</dd>
+                            
+                              <dt class="col-sm-3 text-truncate">released</dt>
+                              <dd class="col-sm-9">{{this.movie.movieData.released}}</dd>
+                              
+                              <dt class="col-sm-3 text-truncate">awards</dt>
+                              <dd class="col-sm-9">{{this.movie.movieData.awards}}</dd>
+
+                              <dt class="col-sm-3 text-truncate">boxOffice</dt>
+                              <dd class="col-sm-9">{{this.movie.movieData.boxOffice}}</dd>
+
+                              <dt class="col-sm-3">Other</dt>
+                              <dd class="col-sm-9">
+                                <dl class="row">
+                                  <dt class="col-sm-4">year</dt>
+                                  <dd class="col-sm-8">{{this.movie.movieData.year}}</dd>
+                                </dl>
+                                <dl class="row">
+                                    <dt class="col-sm-4">Type</dt>
+                                    <dd class="col-sm-8">{{this.movie.movieData.genre}}</dd>
+                                  </dl>
+                              </dd>
+                            </dl>
+                   </div>
+               </div>
+            <!-- <table class="table">
+            <thead>
+              <tr>
+                <th>title</th>
+                <th>year</th>
+                <th>reted</th>
+                <th>released</th>
+                <th>genre</th>
+                <th>director</th>
+              </tr>
+            </thead>
+            <tbody>
+       
+              <tr class="info" >
+                <td>{{this.movie.movieData.title}}</td>
+                <td>{{this.movie.movieData.year}}</td>
+                <td>{{this.movie.movieData.reted}}</td>
+                <td>{{this.movie.movieData.released}}</td>
+                <td>{{this.movie.movieData.genre}}</td>
+                <td>{{this.movie.movieData.director}}</td>
+              </tr>
+    
+            </tbody>
+          </table>
+           -->
+</div>

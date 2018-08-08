@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="jumbotron text-center">
+      <h1>Currency data</h1> 
+      <p>Just enter your currency </p>
+
+      <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Your Currency
+             <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li *ngFor="let data of currencyData; index as i">
+              <a class="dropdown-item" (click)="this.currency.getCurrencyData(data)" href="javascript:void(0)">
+              {{data}}</a>
+            </li>
+          </ul>
+        </div>
+    </div>
+
+    <table class="table">
+            <thead>
+              <tr>
+                <th>USD</th>
+                <th>CAD</th>
+                <th>INR</th>
+                <th>JPY</th>
+                <th>BRL</th>
+                <th>PHP</th>
+              </tr>
+            </thead>
+            <tbody>
+       
+              <tr class="info" >
+                <td>{{this.currency.currencyData.usd}}</td>
+                <td>{{this.currency.currencyData.cad}}</td>
+                <td>{{this.currency.currencyData.inr}}</td>
+                <td>{{this.currency.currencyData.jpy}}</td>
+                <td>{{this.currency.currencyData.brl}}</td>
+                <td>{{this.currency.currencyData.php}}</td>
+              </tr>
+    
+            </tbody>
+    </table>
+</div>    

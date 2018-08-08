@@ -1,0 +1,40 @@
+<div class="container">
+<div class="jumbotron text-center">
+  <h1>Weather data</h1> 
+  <p>Just enter your area name with city</p> 
+ 
+    <div class="input-group">
+      <input #address type="text" class="form-control" size="50" placeholder="Enter Address" required>
+      <div class="input-group-btn">
+        <button type="button" (click)="this.weather.getWeatherData(address.value)" class="btn btn-danger">Submit</button>
+      </div>
+    </div> 
+</div>
+
+      <h2>Weather data</h2>
+      
+      <table class="table table-responsive">
+        <thead>
+          <tr>
+            <th>temperature</th>
+            <th>apparentTemperature</th>
+            <th>pressure</th>
+            <th>windSpeed</th>
+            <th>cloudCover</th>
+            <th>timezone</th>
+          </tr>
+        </thead>
+        <tbody>
+   
+          <tr class="info" >
+            <td>{{this.weather.weatherData.temperature}}</td>
+            <td>{{this.weather.weatherData.apparentTemperature}}</td>
+            <td>{{this.weather.weatherData.pressure}}</td>
+            <td>{{this.weather.weatherData.windSpeed}}</td>
+            <td>{{this.weather.weatherData.cloudCover}}</td>
+            <td>{{this.weather.weatherData.timezone}}</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
